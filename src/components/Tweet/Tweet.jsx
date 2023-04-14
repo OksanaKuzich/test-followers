@@ -1,7 +1,6 @@
 import { useState } from "react";
 import logo from "../../images/logo.png";
 import image from "../../images/picture.png";
-import avatar from "../../images/hansel.png";
 import {
   TweetCard,
   AvatarWrapper,
