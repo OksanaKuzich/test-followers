@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import avatar1 from "../../images/1.png";
 import logo from "../../images/logo.png";
-import { avatarData } from "./data";
 import {
   Avatar,
   Ellipse,
@@ -17,17 +15,6 @@ import {
 } from "./HomePage.styled";
 
 const Home = () => {
-  const [avatar, setAvatar] = useState(avatar1);
-  const randomData = arr => {
-    const rand = Math.floor(Math.random() * arr.length);
-    console.log(arr[rand]);
-    return arr[rand];
-  };
-
-  useEffect(() => {
-    setAvatar(randomData(avatarData));
-  }, []);
-
   return (
     <>
       <main>

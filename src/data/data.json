@@ -1,0 +1,212 @@
+[
+  {
+    "user": "Oksana",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681485359/1-removebg-preview_im8rkc.png",
+    "id": "1"
+  },
+  {
+    "user": "Maks",
+    "tweets": 707,
+    "followers": 100700,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/2-removebg-preview_zaafiu.png",
+    "id": "2"
+  },
+  {
+    "user": "Julia",
+    "tweets": 507,
+    "followers": 100800,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/3-removebg-preview_washix.png",
+    "id": "3"
+  },
+  {
+    "user": "Joi",
+    "tweets": 350,
+    "followers": 101600,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/4-removebg-preview_uwdicj.png",
+    "id": "4"
+  },
+  {
+    "user": "Sveta",
+    "tweets": 100,
+    "followers": 10200,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/5-removebg-preview_codmcs.png",
+    "id": "5"
+  },
+  {
+    "user": "Mark",
+    "tweets": 460,
+    "followers": 103240,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/6-removebg-preview_vsh0ht.png",
+    "id": "6"
+  },
+  {
+    "user": "Olivia",
+    "tweets": 460,
+    "followers": 103240,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/7-removebg-preview_dnpp1n.png",
+    "id": "7"
+  },
+  {
+    "user": "Liam",
+    "tweets": 560,
+    "followers": 120600,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/8-removebg-preview_lexsd5.png",
+    "id": "8"
+  },
+  {
+    "user": "Emma",
+    "tweets": 450,
+    "followers": 157900,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/9-removebg-preview_rzifsv.png",
+    "id": "9"
+  },
+  {
+    "user": "Noah",
+    "tweets": 950,
+    "followers": 250000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/10-removebg-preview_ozuxok.png",
+    "id": "10"
+  },
+  {
+    "user": "Charlotte",
+    "tweets": 820,
+    "followers": 160000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/11-removebg-preview_towsae.png",
+    "id": "11"
+  },
+  {
+    "user": "Oliver",
+    "tweets": 400,
+    "followers": 10000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/12-removebg-preview_f2hllz.png",
+    "id": "12"
+  },
+  {
+    "user": "Amelia",
+    "tweets": 100,
+    "followers": 1000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/13-removebg-preview_qcxxyi.png",
+    "id": "13"
+  },
+  {
+    "user": "Elijah",
+    "tweets": 370,
+    "followers": 130000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/14-removebg-preview_dbuxbi.png",
+    "id": "14"
+  },
+  {
+    "user": "Ava",
+    "tweets": 410,
+    "followers": 107000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/15-removebg-preview_t6kobu.png",
+    "id": "15"
+  },
+  {
+    "user": "James",
+    "tweets": 690,
+    "followers": 127900,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/16-removebg-preview_hjgx0u.png",
+    "id": "16"
+  },
+  {
+    "user": "Sophia",
+    "tweets": 370,
+    "followers": 111000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487625/17-removebg-preview_keukbg.png",
+    "id": "17"
+  },
+  {
+    "user": "William",
+    "tweets": 120,
+    "followers": 327000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487627/18-removebg-preview_u7offl.png",
+    "id": "18"
+  },
+  {
+    "user": "Isabella",
+    "tweets": 790,
+    "followers": 566000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487627/19-removebg-preview_bitvwx.png",
+    "id": "19"
+  },
+  {
+    "user": "Benjamin",
+    "tweets": 700,
+    "followers": 300000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487627/20-removebg-preview_u3rv1j.png",
+    "id": "20"
+  },
+  {
+    "user": "Mia",
+    "tweets": 350,
+    "followers": 6000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/21-removebg-preview_tiwu7k.png",
+    "id": "21"
+  },
+  {
+    "user": "Ozzy",
+    "tweets": 770,
+    "followers": 467000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/22-removebg-preview_kba5lq.png",
+    "id": "22"
+  },
+  {
+    "user": "Raya",
+    "tweets": 730,
+    "followers": 234000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/23-removebg-preview_dicgns.png",
+    "id": "23"
+  },
+  {
+    "user": "Banks",
+    "tweets": 230,
+    "followers": 20000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/24-removebg-preview_cf7fqi.png",
+    "id": "24"
+  },
+  {
+    "user": "Gian",
+    "tweets": 350,
+    "followers": 939000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/25-removebg-preview_oka1ku.png",
+    "id": "25"
+  },
+  {
+    "user": "Vida",
+    "tweets": 550,
+    "followers": 521000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/26-removebg-preview_utvkao.png",
+    "id": "26"
+  },
+  {
+    "user": "Elio",
+    "tweets": 300,
+    "followers": 1000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/27-removebg-preview_v9dbfh.png",
+    "id": "27"
+  },
+  {
+    "user": "Flora",
+    "tweets": 472,
+    "followers": 829000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/28-removebg-preview_tqiumm.png",
+    "id": "28"
+  },
+  {
+    "user": "Kylian",
+    "tweets": 130,
+    "followers": 23000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/29-removebg-preview_urazze.png",
+    "id": "29"
+  },
+  {
+    "user": "Ocean",
+    "tweets": 710,
+    "followers": 281000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/30-removebg-preview_otr9ep.png",
+    "id": "30"
+  }
+]

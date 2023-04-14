@@ -14,7 +14,7 @@ import {
 import { Button } from "./Button";
 
 export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
-  const [isButtonClick, setIsButtonClick] = useState(false);
+  const [, setIsButtonClick] = useState(false);
 
   return (
     <TweetCard>
