@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import image from "../../images/picture.png";
 import {
@@ -14,7 +14,17 @@ import {
 import { Button } from "./Button";
 
 export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
-  const [, setIsButtonClick] = useState(false);
+  const [isButtonClick, setIsButtonClick] = useState(false);
+  const [followers, setFollowers] = useState(tweet.followers);
+
+  useEffect(() => {
+    if (selectedTweets.includes(tweet.id)) {
+      return setFollowers(tweet.followers + 1);
+    } else if (isButtonClick) {
+      return setFollowers(tweet.followers + 1);
+    }
+    return;
+  }, [followers, isButtonClick, selectedTweets, tweet.followers, tweet.id]);
 
   return (
     <TweetCard>
@@ -30,7 +40,7 @@ export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
       <ContentWrapper>
         <Content>{tweet.tweets} TWEETS</Content>
         <Content>
-          {(tweet.followers / 1000).toFixed(3).toString().split(".").join(",")}{" "}
+          {(followers / 1000).toFixed(3).toString().split(".").join(",")}{" "}
           FOLLOWERS
         </Content>
         <Button
@@ -38,6 +48,7 @@ export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
           selectedTweets={selectedTweets}
           setSelectedTweets={setSelectedTweets}
           id={tweet.id}
+          setFollowers={setFollowers}
         />
       </ContentWrapper>
     </TweetCard>

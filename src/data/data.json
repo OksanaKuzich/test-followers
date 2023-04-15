@@ -208,5 +208,19 @@
     "followers": 281000,
     "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681487626/30-removebg-preview_otr9ep.png",
     "id": "30"
+  },
+  {
+    "user": "Mary",
+    "tweets": 360,
+    "followers": 279000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681550254/31-removebg-preview_mpjtcg.png",
+    "id": "31"
+  },
+  {
+    "user": "Oskar",
+    "tweets": 580,
+    "followers": 618000,
+    "avatar": "https://res.cloudinary.com/dhexto77w/image/upload/v1681550254/32-removebg-preview_zxteo3.png",
+    "id": "32"
   }
 ]

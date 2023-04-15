@@ -11,55 +11,79 @@ const Tweets = () => {
   const collectionParse = JSON.parse(collectionTweets) ?? [];
 
   const [list, setList] = useState([]);
-  const [isLoadmoreClick, setIsLoadmoreClick] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedTweets, setSelectedTweets] = useState(collectionParse);
+  const [page, setPage] = useState(1);
+  const [isHandleBtnMore, setIsHandleBtnMore] = useState(false);
+  const [isFetchMore, setIsFetchMore] = useState(true);
+  const [lengthCollection, setLengthCollection] = useState(0);
+  const [btnFilter, setBtnFilter] = useState("");
 
   useEffect(() => {
-    console.log(selectedTweets);
     localStorage.setItem(
       "collectionYoursTweets",
       JSON.stringify(selectedTweets)
     );
-  }, [selectedTweets]);
+  }, [page, selectedTweets]);
+
+  useEffect(() => {
+    const getAll = async () => {
+      const all = await getAllTweets();
+      setLengthCollection(all.length);
+      if (btnFilter === "show all") {
+        setList(all);
+      }
+      if (btnFilter === "follow") {
+        const follow = all.filter(item => !selectedTweets.includes(item.id));
+        setList(follow);
+        setLengthCollection(follow.length);
+      }
+      if (btnFilter === "followings") {
+        const followings = all.filter(item => selectedTweets.includes(item.id));
+        setList(followings);
+        setLengthCollection(followings.length);
+      }
+    };
+    getAll();
+  }, [btnFilter, selectedTweets]);
 
   useEffect(() => {
     setIsLoading(true);
-    const getPopular = async () => {
-      const popular = await getPopularTweets();
-      setList(popular);
-    };
-    const getAll = async () => {
-      const all = await getAllTweets();
-      setList(all);
-    };
+    if (!isFetchMore) return;
+    if (lengthCollection === list.length) return;
 
-    if (isLoadmoreClick) {
-      getAll();
-    } else {
-      getPopular();
-    }
+    const getPopular = async page => {
+      const popular = await getPopularTweets(page);
+      setList([...list, ...popular]);
+    };
+    getPopular(page);
     setIsLoading(false);
-  }, [isLoadmoreClick, isLoading]);
+    setIsFetchMore(false);
+  }, [isFetchMore, isHandleBtnMore, lengthCollection, list, page]);
 
   const handleClickMore = () => {
-    setIsLoadmoreClick(!isLoadmoreClick);
+    setIsFetchMore(true);
+    setIsHandleBtnMore(true);
+    setPage(prevState => prevState + 1);
+    setIsHandleBtnMore(false);
   };
 
   return (
     <main>
       <Container>
-        <Filter />
+        <Filter setBtnFilter={setBtnFilter} />
         <TweetsList
           list={list}
           setSelectedTweets={setSelectedTweets}
           selectedTweets={selectedTweets}
         />
-        <ButtonFilter type="button" onClick={handleClickMore}>
-          {isLoadmoreClick ? "Hide all" : "Load more"}
-        </ButtonFilter>
+        {lengthCollection !== list.length && (
+          <ButtonFilter type="button" onClick={handleClickMore}>
+            Load more
+          </ButtonFilter>
+        )}
       </Container>
-      {isLoading && <Preloader />}
+      {/* {isLoading && <Preloader />} */}
     </main>
   );
 };
