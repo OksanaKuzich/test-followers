@@ -30,7 +30,6 @@ const Tweets = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    console.log("loader go 1");
     const getAll = async () => {
       const all = await getAllTweets();
       setLengthCollection(all.length);
@@ -50,22 +49,18 @@ const Tweets = () => {
     };
     getAll();
     setIsLoading(false);
-    console.log("finish 1");
   }, [btnFilter, selectedTweets]);
 
   useEffect(() => {
     if (!isFetchMore) return;
     if (lengthCollection === list.length) return;
     setIsLoading(true);
-    console.log("loader go 2");
-    console.log("11111");
     const getPopular = async page => {
       const popular = await getPopularTweets(page);
       setList([...list, ...popular]);
     };
     getPopular(page);
     setIsLoading(false);
-    console.log("finish 2");
     setIsFetchMore(false);
   }, [isFetchMore, isHandleBtnMore, lengthCollection, list, page]);
 
