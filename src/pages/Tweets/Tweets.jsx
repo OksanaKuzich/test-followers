@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { getPopularTweets, getAllTweets } from "services/api";
-import { Container } from "components/Container/Container.styled";
+import pony from "../../images/pony.png";
+import { Preloader } from "components/Preloader/Preloader";
 import { Filter } from "components/Filter/Filter";
 import { TweetsList } from "components/Tweet/TweetsList";
 import { ButtonFilter } from "components/Filter/Filter.styled";
-import { Preloader } from "components/Preloader/Preloader";
+import { Container } from "components/Container/Container.styled";
+import { PonySt } from "./Tweets.styled";
 
 const Tweets = () => {
   const collectionTweets = localStorage.getItem("collectionYoursTweets");
@@ -27,6 +29,8 @@ const Tweets = () => {
   }, [page, selectedTweets]);
 
   useEffect(() => {
+    setIsLoading(true);
+    console.log("loader go 1");
     const getAll = async () => {
       const all = await getAllTweets();
       setLengthCollection(all.length);
@@ -45,19 +49,23 @@ const Tweets = () => {
       }
     };
     getAll();
+    setIsLoading(false);
+    console.log("finish 1");
   }, [btnFilter, selectedTweets]);
 
   useEffect(() => {
-    setIsLoading(true);
     if (!isFetchMore) return;
     if (lengthCollection === list.length) return;
-
+    setIsLoading(true);
+    console.log("loader go 2");
+    console.log("11111");
     const getPopular = async page => {
       const popular = await getPopularTweets(page);
       setList([...list, ...popular]);
     };
     getPopular(page);
     setIsLoading(false);
+    console.log("finish 2");
     setIsFetchMore(false);
   }, [isFetchMore, isHandleBtnMore, lengthCollection, list, page]);
 
@@ -72,18 +80,22 @@ const Tweets = () => {
     <main>
       <Container>
         <Filter setBtnFilter={setBtnFilter} />
-        <TweetsList
-          list={list}
-          setSelectedTweets={setSelectedTweets}
-          selectedTweets={selectedTweets}
-        />
+        {list.length !== 0 ? (
+          <TweetsList
+            list={list}
+            setSelectedTweets={setSelectedTweets}
+            selectedTweets={selectedTweets}
+          />
+        ) : (
+          <PonySt src={pony} alt="pony" />
+        )}
         {lengthCollection !== list.length && (
           <ButtonFilter type="button" onClick={handleClickMore}>
             Load more
           </ButtonFilter>
         )}
       </Container>
-      {/* {isLoading && <Preloader />} */}
+      {isLoading && <Preloader />}
     </main>
   );
 };
