@@ -1,25 +1,31 @@
 import { useEffect, useState } from "react";
-import { getPopularTweets, getAllTweets } from "services/api";
+import { getPopularTweets } from "services/api";
+import { getAll } from "helpers/filterTweets";
 import pony from "../../images/pony.png";
 import { Preloader } from "components/Preloader/Preloader";
 import { Filter } from "components/Filter/Filter";
 import { TweetsList } from "components/Tweet/TweetsList";
-import { ButtonFilter } from "components/Filter/Filter.styled";
 import { Container } from "components/Container/Container.styled";
 import { PonySt } from "./Tweets.styled";
+import { ButtonMore } from "components/ButtonMore/ButtonMore";
 
 const Tweets = () => {
-  const collectionTweets = localStorage.getItem("collectionYoursTweets");
-  const collectionParse = JSON.parse(collectionTweets) ?? [];
+  const collectionTweets = JSON.parse(
+    localStorage.getItem("collectionYoursTweets") ?? "[]"
+  );
 
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedTweets, setSelectedTweets] = useState(collectionParse);
+  const [selectedTweets, setSelectedTweets] = useState(collectionTweets);
   const [page, setPage] = useState(1);
   const [isHandleBtnMore, setIsHandleBtnMore] = useState(false);
   const [isFetchMore, setIsFetchMore] = useState(true);
   const [lengthCollection, setLengthCollection] = useState(0);
   const [btnFilter, setBtnFilter] = useState("");
+
+  useEffect(() => {
+    console.log(lengthCollection);
+  }, [lengthCollection]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -30,25 +36,13 @@ const Tweets = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const getAll = async () => {
-      const all = await getAllTweets();
-      setLengthCollection(all.length);
-      if (btnFilter === "show all") {
-        setList(all);
-      }
-      if (btnFilter === "follow") {
-        const follow = all.filter(item => !selectedTweets.includes(item.id));
-        setList(follow);
-        setLengthCollection(follow.length);
-      }
-      if (btnFilter === "followings") {
-        const followings = all.filter(item => selectedTweets.includes(item.id));
-        setList(followings);
-        setLengthCollection(followings.length);
-      }
-    };
-    getAll();
-    setIsLoading(false);
+    getAll(
+      setLengthCollection,
+      btnFilter,
+      selectedTweets,
+      setList,
+      setIsLoading
+    );
   }, [btnFilter, selectedTweets]);
 
   useEffect(() => {
@@ -58,23 +52,16 @@ const Tweets = () => {
     const getPopular = async page => {
       const popular = await getPopularTweets(page);
       setList([...list, ...popular]);
+      setIsLoading(false);
     };
     getPopular(page);
-    setIsLoading(false);
     setIsFetchMore(false);
   }, [isFetchMore, isHandleBtnMore, lengthCollection, list, page]);
-
-  const handleClickMore = () => {
-    setIsFetchMore(true);
-    setIsHandleBtnMore(true);
-    setPage(prevState => prevState + 1);
-    setIsHandleBtnMore(false);
-  };
 
   return (
     <main>
       <Container>
-        <Filter setBtnFilter={setBtnFilter} />
+        <Filter setBtnFilter={setBtnFilter} btnFilter={btnFilter} />
         {list.length !== 0 ? (
           <TweetsList
             list={list}
@@ -85,9 +72,11 @@ const Tweets = () => {
           <PonySt src={pony} alt="pony" />
         )}
         {lengthCollection !== list.length && (
-          <ButtonFilter type="button" onClick={handleClickMore}>
-            Load more
-          </ButtonFilter>
+          <ButtonMore
+            setIsFetchMore={setIsFetchMore}
+            setIsHandleBtnMore={setIsHandleBtnMore}
+            setPage={setPage}
+          />
         )}
       </Container>
       {isLoading && <Preloader />}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import image from "../../images/picture.png";
+import { Button } from "./Button";
 import {
   TweetCard,
   AvatarWrapper,
@@ -11,7 +12,6 @@ import {
   Content,
   EllipseDark,
 } from "./Tweet.styled";
-import { Button } from "./Button";
 
 export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
   const [isButtonClick, setIsButtonClick] = useState(false);
