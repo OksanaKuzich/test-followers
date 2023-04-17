@@ -24,7 +24,7 @@ npm install
 
 npm start
 
-### **will run at http://localhost:3000/test-followers/tweets**
+### **will run at http://localhost:3000/test-followers/**
 
 <br>
 
@@ -32,21 +32,19 @@ npm start
 
 ## The project was carried out using:
 
-- ## HTML
-- ## SCSS
-- ## Java Script
-- ## React
+- ### HTML
+- ### SCSS
+- ### Java Script
+- ### React
 
 <br>
 
 ## Project libraries:
 
-- ## axios
-- ## body-scroll-lock
-- ## react
-- ## react-dom
-- ## react-router-dom
-- ## styled-components
-- ## material ui
-
-https://img.shields.io/github/followers/OksanaKuzich?style=social
+- ### axios
+- ### body-scroll-lock
+- ### react
+- ### react-dom
+- ### react-router-dom
+- ### styled-components
+- ### material ui
