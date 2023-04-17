@@ -1,29 +1,55 @@
 import { filterBtn } from "./data";
-import { FilterList, ButtonFilter } from "./Filter.styled";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 export const Filter = ({ setBtnFilter, btnFilter }) => {
-  const handleFilterBtn = e => {
-    setBtnFilter(e.target.dataset.filter);
+  const handleChange = event => {
+    setBtnFilter(event.target.value);
   };
 
   return (
-    <FilterList>
-      {filterBtn.map(btn => (
-        <li key={btn.text}>
-          <ButtonFilter
-            type="button"
-            onClick={handleFilterBtn}
-            data-filter={btn.text}
-            disabled={btn.text === btnFilter ? true : false}
-            style={{
-              backgroundColor: btn.text === btnFilter ? "#fff" : "#ebd8ff",
-              border: btn.text === btnFilter ? "2px solid #5736a3" : "none",
-            }}
-          >
-            {btn.text}
-          </ButtonFilter>
-        </li>
-      ))}
-    </FilterList>
+    <Box
+      sx={{
+        width: 150,
+        mt: 5,
+        ml: "auto",
+        mr: "auto",
+      }}
+    >
+      <FormControl
+        sx={{
+          width: 150,
+          borderRadius: "10px",
+          fontFamily: "'Montserrat', sans-serif",
+        }}
+      >
+        <InputLabel id="demo-simple-select-label" color="secondary">
+          Filter
+        </InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={btnFilter}
+          label="Filter"
+          onChange={handleChange}
+          color="secondary"
+        >
+          {filterBtn.map(btn => (
+            <MenuItem
+              value={btn.text}
+              key={btn.text}
+              sx={{
+                fontFamily: "'Montserrat', sans-serif",
+              }}
+            >
+              {btn.text}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </Box>
   );
 };

@@ -5,9 +5,9 @@ import pony from "../../images/pony.png";
 import { Preloader } from "components/Preloader/Preloader";
 import { Filter } from "components/Filter/Filter";
 import { TweetsList } from "components/Tweet/TweetsList";
+import { ButtonMore } from "components/ButtonMore/ButtonMore";
 import { Container } from "components/Container/Container.styled";
 import { PonySt } from "./Tweets.styled";
-import { ButtonMore } from "components/ButtonMore/ButtonMore";
 
 const Tweets = () => {
   const collectionTweets = JSON.parse(
@@ -22,10 +22,6 @@ const Tweets = () => {
   const [isFetchMore, setIsFetchMore] = useState(true);
   const [lengthCollection, setLengthCollection] = useState(0);
   const [btnFilter, setBtnFilter] = useState("");
-
-  useEffect(() => {
-    console.log(lengthCollection);
-  }, [lengthCollection]);
 
   useEffect(() => {
     localStorage.setItem(

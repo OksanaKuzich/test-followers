@@ -1,10 +1,15 @@
-import { HeaderStyle, Link, NavList, NavItem } from './Header.styled';
+import { useNavigate, useLocation } from "react-router-dom";
+import { navItems } from "./data";
+import { ButtonFilter } from "components/Filter/Filter.styled";
+import { HeaderStyle, Link, NavList, NavItem } from "./Header.styled";
 
 export const Header = () => {
-  const navItems = [
-    { href: '/', text: 'Home' },
-    { href: 'tweets', text: 'Tweets' },
-  ];
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleClickBack = () => {
+    navigate("/", { replace: true });
+  };
 
   return (
     <HeaderStyle>
@@ -19,6 +24,11 @@ export const Header = () => {
           ))}
         </NavList>
       </nav>
+      {location.pathname === "/tweets" && (
+        <ButtonFilter type="button" onClick={handleClickBack}>
+          Back
+        </ButtonFilter>
+      )}
     </HeaderStyle>
   );
 };

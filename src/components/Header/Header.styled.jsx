@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { ButtonFilter } from "components/Filter/Filter.styled";
 
 export const Link = styled(NavLink)`
   font-size: 20px;
@@ -19,6 +20,12 @@ export const Link = styled(NavLink)`
 export const HeaderStyle = styled.header`
   border-bottom: 1px solid #5736a3;
   box-shadow: 0 10px 10px -5px rgba(87, 54, 163, 0.3);
+  display: flex;
+  justify-content: space-between;
+
+  ${ButtonFilter} {
+    margin-right: 50px;
+  }
 `;
 
 export const NavList = styled.ul`
