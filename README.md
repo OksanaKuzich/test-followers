@@ -1,6 +1,12 @@
 <h1 align="center">Tweets</h1>
 
 <p align="center">
+<img src="https://img.shields.io/github/languages/top/OksanaKuzich/test-followers?color=critical">
+<img src="https://img.shields.io/github/languages/code-size/OksanaKuzich/test-followers?color=critical">
+<img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" >
+</p>
+
+<p align="center">
 <img src="https://res.cloudinary.com/dhexto77w/image/upload/v1681724897/demo_lpqedi.png">
 </p>
 
@@ -26,19 +32,21 @@ npm start
 
 ## The project was carried out using:
 
-- ### HTML
-- ### SCSS
-- ### Java Script
-- ### React
+- ## HTML
+- ## SCSS
+- ## Java Script
+- ## React
 
 <br>
 
 ## Project libraries:
 
-- ### axios
-- ### body-scroll-lock
-- ### react
-- ### react-dom
-- ### react-router-dom
-- ### styled-components
-- ### material ui
+- ## axios
+- ## body-scroll-lock
+- ## react
+- ## react-dom
+- ## react-router-dom
+- ## styled-components
+- ## material ui
+
+https://img.shields.io/github/followers/OksanaKuzich?style=social
