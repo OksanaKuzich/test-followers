@@ -6,8 +6,11 @@ import { Preloader } from "components/Preloader/Preloader";
 import { Filter } from "components/Filter/Filter";
 import { TweetsList } from "components/Tweet/TweetsList";
 import { ButtonMore } from "components/ButtonMore/ButtonMore";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { Container } from "components/Container/Container.styled";
 import { PonySt } from "./Tweets.styled";
+
+const body = document.getElementsByTagName("body")[0];
 
 const Tweets = () => {
   const collectionTweets = JSON.parse(
@@ -32,12 +35,14 @@ const Tweets = () => {
 
   useEffect(() => {
     setIsLoading(true);
+    disableBodyScroll(body);
     getAll(
       setLengthCollection,
       btnFilter,
       selectedTweets,
       setList,
-      setIsLoading
+      setIsLoading,
+      body
     );
   }, [btnFilter, selectedTweets]);
 
@@ -45,10 +50,12 @@ const Tweets = () => {
     if (!isFetchMore) return;
     if (lengthCollection === list.length) return;
     setIsLoading(true);
+    disableBodyScroll(body);
     const getPopular = async page => {
       const popular = await getPopularTweets(page);
       setList([...list, ...popular]);
       setIsLoading(false);
+      enableBodyScroll(body);
     };
     getPopular(page);
     setIsFetchMore(false);

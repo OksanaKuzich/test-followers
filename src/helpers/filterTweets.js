@@ -1,7 +1,7 @@
 import { getAllTweets } from "services/api";
-  
+import { enableBodyScroll } from "body-scroll-lock";
 
-export const getAll = async (setLengthCollection, btnFilter, selectedTweets, setList, setIsLoading) => {
+export const getAll = async (setLengthCollection, btnFilter, selectedTweets, setList, setIsLoading, body) => {
     const all = await getAllTweets();
     setLengthCollection(all.length);
     if (btnFilter === "show all") {
@@ -17,5 +17,6 @@ export const getAll = async (setLengthCollection, btnFilter, selectedTweets, set
       setList(followings);
       setLengthCollection(followings.length);
     }
-    setIsLoading(false);
+  setIsLoading(false);
+  enableBodyScroll(body)
   };
