@@ -9,3 +9,4 @@ declare module '*.jpg' {
 }
 
 declare module 'body-scroll-lock'
+declare module 'styled-components'

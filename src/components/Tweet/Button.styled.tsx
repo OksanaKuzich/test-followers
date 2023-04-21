@@ -4,7 +4,7 @@ export const ButtonStyle = styled.button`
   margin-top: 26px;
   width: 196px;
   height: 50px;
-  background: ${props =>
+  background: ${(props: any) =>
     props.children === "follow" ? " #ebd8ff" : "#5CD3A8"};
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   border-radius: 10px;

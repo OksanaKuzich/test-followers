@@ -42,8 +42,7 @@ const Tweets: React.FC = () => {
       btnFilter,
       selectedTweets,
       setList,
-      setIsLoading,
-      body
+      setIsLoading
     );
   }, [btnFilter, selectedTweets]);
 
