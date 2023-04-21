@@ -1,4 +1,4 @@
-import { getAllTweets } from "services/api";
+import { getAllTweets } from "../services/api";
 import { enableBodyScroll } from "body-scroll-lock";
 
 export const getAll = async (setLengthCollection, btnFilter, selectedTweets, setList, setIsLoading, body) => {

@@ -1,13 +1,13 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { navItems } from "./data";
-import { ButtonFilter } from "components/Filter/Filter.styled";
+import { ButtonFilter } from "../../components/Filter/Filter.styled";
 import { HeaderStyle, Link, NavList, NavItem } from "./Header.styled";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleClickBack = () => {
+  const handleClickBack = (): void => {
     navigate("/", { replace: true });
   };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { ButtonFilter } from "components/Filter/Filter.styled";
+import { ButtonFilter } from "../../components/Filter/Filter.styled";
 
 export const Link = styled(NavLink)`
   font-size: 20px;

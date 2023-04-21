@@ -1,7 +1,17 @@
 import { Tweet } from "./Tweet";
 import { TweetsListStyle } from "./TweetsList.styled";
 
-export const TweetsList = ({ list, setSelectedTweets, selectedTweets }) => {
+interface IProps {
+  list: any[];
+  setSelectedTweets: (selectedTweets: string[]) => void;
+  selectedTweets: string[];
+}
+
+export const TweetsList: React.FC<IProps> = ({
+  list,
+  setSelectedTweets,
+  selectedTweets,
+}) => {
   return (
     <TweetsListStyle>
       {list.map(tweet => (

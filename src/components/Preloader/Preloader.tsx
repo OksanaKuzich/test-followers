@@ -1,6 +1,6 @@
 import './index.css';
 
-export const Preloader = () => {
+export const Preloader: React.FC = () => {
   return (
     <div className="loader">
       <div className="loader-inner">

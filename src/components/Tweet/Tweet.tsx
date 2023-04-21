@@ -13,9 +13,23 @@ import {
   EllipseDark,
 } from "./Tweet.styled";
 
-export const Tweet = ({ tweet, selectedTweets, setSelectedTweets }) => {
-  const [isButtonClick, setIsButtonClick] = useState(false);
-  const [followers, setFollowers] = useState(tweet.followers);
+interface TweetData {
+  followers: number,
+  id: number,
+  avatar: string,
+  user: string,
+  tweets: number,
+}
+
+interface IProps {
+  tweet: TweetData;
+  selectedTweets: any[];
+  setSelectedTweets: (selectedTweets: string[]) => void;
+}
+
+export const Tweet: React.FC<IProps> = ({ tweet, selectedTweets, setSelectedTweets }) => {
+  const [isButtonClick, setIsButtonClick] = useState<boolean>(false);
+  const [followers, setFollowers] = useState<any>(tweet.followers);
 
   useEffect(() => {
     if (selectedTweets.includes(tweet.id)) {

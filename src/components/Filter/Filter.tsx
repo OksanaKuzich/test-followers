@@ -5,8 +5,13 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export const Filter = ({ setBtnFilter, btnFilter }) => {
-  const handleChange = event => {
+interface IProps {
+  setBtnFilter: (btnFilter: string) => void;
+  btnFilter: string;
+}
+
+export const Filter: React.FC<IProps> = ({ setBtnFilter, btnFilter }) => {
+  const handleChange = (event: any): void => {
     setBtnFilter(event.target.value);
   };
 

@@ -36,6 +36,7 @@ npm start
 - ### SCSS
 - ### Java Script
 - ### React
+- ### TypeScript
 
 <br>
 

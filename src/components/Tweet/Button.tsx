@@ -1,6 +1,14 @@
 import { ButtonStyle } from "./Button.styled";
 
-export const Button = ({
+interface IProps {
+  setIsButtonClick: (isButtonClick: boolean) => void;
+  selectedTweets: any[];
+  setSelectedTweets: (selectedTweets: string[]) => void;
+  id: number;
+  setFollowers: (followers: any) => void;
+}
+
+export const Button: React.FC<IProps> = ({
   setIsButtonClick,
   selectedTweets,
   setSelectedTweets,
@@ -11,7 +19,7 @@ export const Button = ({
     if (selectedTweets && selectedTweets.includes(id)) {
       const newSelected = selectedTweets.filter(tweet => tweet !== id);
       setSelectedTweets([...newSelected]);
-      setFollowers(prevState => prevState - 1);
+      setFollowers((prevState: any) => prevState - 1);
       setIsButtonClick(false);
       return;
     }
