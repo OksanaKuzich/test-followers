@@ -12,7 +12,7 @@ export const ButtonMore: React.FC<IProps> = ({
   setIsHandleBtnMore,
   setPage,
 }) => {
-  const handleClickMore = () => {
+  const handleClickMore = (): void => {
     setIsFetchMore(true);
     setIsHandleBtnMore(true);
     setPage((prevState: any) => prevState + 1);

@@ -51,8 +51,8 @@ const Tweets: React.FC = () => {
     if (lengthCollection === list.length) return;
     setIsLoading(true);
     disableBodyScroll(body);
-    const getPopular = async (page: number) => {
-      const popular = await getPopularTweets(page);
+    const getPopular = async (page: number): Promise<void> => {
+      const popular: any[] = await getPopularTweets(page);
       setList([...list, ...popular]);
       setIsLoading(false);
       enableBodyScroll(body);

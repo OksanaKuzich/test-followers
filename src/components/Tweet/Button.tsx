@@ -15,9 +15,9 @@ export const Button: React.FC<IProps> = ({
   id,
   setFollowers,
 }) => {
-  const handleButtonClick = () => {
+  const handleButtonClick = (): void => {
     if (selectedTweets && selectedTweets.includes(id)) {
-      const newSelected = selectedTweets.filter(tweet => tweet !== id);
+      const newSelected: any = selectedTweets.filter(tweet => tweet !== id);
       setSelectedTweets([...newSelected]);
       setFollowers((prevState: any) => prevState - 1);
       setIsButtonClick(false);
