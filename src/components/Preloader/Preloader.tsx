@@ -1,25 +1,30 @@
-import './index.css';
+import {
+  Loader,
+  LoaderInner,
+  LoaderLineWrap,
+  LoaderLine,
+} from "./Preloader.styled";
 
 export const Preloader: React.FC = () => {
   return (
-    <div className="loader">
-      <div className="loader-inner">
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-        <div className="loader-line-wrap">
-          <div className="loader-line"></div>
-        </div>
-      </div>
-    </div>
+    <Loader>
+      <LoaderInner>
+        <LoaderLineWrap>
+          <LoaderLine />
+        </LoaderLineWrap>
+        <LoaderLineWrap>
+          <LoaderLine />
+        </LoaderLineWrap>
+        <LoaderLineWrap>
+          <LoaderLine />
+        </LoaderLineWrap>
+        <LoaderLineWrap>
+          <LoaderLine />
+        </LoaderLineWrap>
+        <LoaderLineWrap>
+          <LoaderLine />
+        </LoaderLineWrap>
+      </LoaderInner>
+    </Loader>
   );
 };
