@@ -12,16 +12,23 @@ import { PonySt } from "./Tweets.styled";
 
 const body = document.getElementsByTagName("body")[0];
 
+interface ITweet {
+  avatar: string;
+  id: string;
+  user: string;
+  tweets: number;
+  followers: number;
+}
+
 const Tweets: React.FC = () => {
   const collectionTweets = JSON.parse(
     localStorage.getItem("collectionYoursTweets") ?? "[]"
   );
-
-  const [list, setList] = useState<{ list: any[] }[]>([]);
+  const [list, setList] = useState<ITweet[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedTweets, setSelectedTweets] =
     useState<string[]>(collectionTweets);
-  const [page, setPage] = useState<any>(1);
+  const [page, setPage] = useState<number>(1);
   const [isHandleBtnMore, setIsHandleBtnMore] = useState<boolean>(false);
   const [isFetchMore, setIsFetchMore] = useState<boolean>(true);
   const [lengthCollection, setLengthCollection] = useState<number>(0);
